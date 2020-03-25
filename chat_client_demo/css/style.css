@@ -1,0 +1,80 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: "Ubuntu-Italic", "Lucida Sans", helvetica, sans-serif;
+    min-height: 100%;
+    font-size: 1.5em;
+    padding: 0;
+}
+
+
+div.chat_messages {
+    height: 90%;
+    width: 100%;
+}
+
+.chat_send {
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.chat_box {
+    font-size: 1em;
+    height: 100%;
+    width: 75%;
+    float:left;
+}
+
+.chat_button {
+    font-size: 1em;
+    height: 100%;
+    word-wrap: break-word;
+    width: 20%;
+    max-width: 100%;
+    float:right;
+}
+
+.talk-bubble {
+    width: 80%;
+    height: auto;
+    margin-bottom: 2em;
+    clear: both;
+}
+
+.yours {
+    background-color: lightblue;
+    float: right;
+}
+
+.theirs {
+    background-color: lightgreen;
+    float: left;
+}
+
+.border{
+    border: 1px solid #666;
+}
+.round{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+
+}
+
+/* talk bubble contents */
+.talktext {
+    padding: 1em;
+    text-align: left;
+    line-height: 1.5em;
+}
+.talktext div {
+    /* remove webkit p margins */
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}

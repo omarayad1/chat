@@ -1,0 +1,12 @@
+---
+
+- hosts: message_queues
+  vars_files:
+  - defaults/users_and_groups.yml
+  - defaults/ssl.yml
+
+  roles:
+    - users_directories
+    - ssl
+    - java
+    - message_queue
