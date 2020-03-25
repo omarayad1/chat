@@ -34,6 +34,11 @@ resource "kubernetes_deployment" "chat_broadcast_sse" {
           name              = "chat-broadcast-sse"
           image_pull_policy = "Never"
 
+          env {
+            name = "MQTT_BROKER_URL"
+            value = "tcp://${var.mqtt_public_ip}:61613"
+          }
+
           resources {
             requests {
               cpu    = "100m"

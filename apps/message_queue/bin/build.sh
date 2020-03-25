@@ -2,4 +2,4 @@
 
 set -ex
 
-ansible-playbook -i local/hosts.ini install.yml --check -vv
+ansible-playbook -i local/hosts.ini install.yml --check -vv | exit 0

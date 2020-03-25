@@ -24,7 +24,7 @@ jobs:
         - docker pull maven:3.6-jdk-8-slim
       script: docker run -v ${PWD}:/app maven:3.6-jdk-8-slim /bin/bash -c "cd /app/apps/chat_service; mvn test;"
       stage: test
-    - script: cd apps/message_queue && ./bin/test.sh | exit 0
+    - script: cd apps/message_queue && (./bin/test.sh | exit 0)
       stage: test
     # - script: ./bin/release.sh
     #   stage: release
@@ -32,3 +32,9 @@ jobs:
       stage: build
     - script: cd apps/chat_service && ./bin/build.sh
       stage: build
+    - script: cd apps/chat_broadcast_sse && ./bin/deploy.sh
+      stage: deploy
+    - script: cd apps/chat_service && ./bin/deploy.sh
+      stage: deploy
+    - script: cd infra && ./bin/deploy.sh
+      stage: deploy

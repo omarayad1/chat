@@ -2,5 +2,4 @@
 
 set -ex
 
-# TODO
-exit 0
+mvn test

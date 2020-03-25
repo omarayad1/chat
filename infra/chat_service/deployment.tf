@@ -39,6 +39,11 @@ resource "kubernetes_deployment" "chat_service" {
             value = 8081
           }
 
+          env {
+            name = "MQTT_BROKER_URL"
+            value = "tcp://${var.mqtt_public_ip}:61613"
+          }
+
           port {
             container_port = 8081
           }
