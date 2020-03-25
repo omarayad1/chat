@@ -12,7 +12,7 @@ stages:
 
 before_install:
   - pip install yq ansible
-  - apt install python-apt
+  - sudo apt-get install -y python-apt
 
 jobs:
   include:
@@ -26,6 +26,8 @@ jobs:
       stage: test
     - script: cd apps/message_queue && ./bin/test.sh | exit 0
       stage: test
+    # - script: ./bin/release.sh
+    #   stage: release
     - script: cd apps/chat_broadcast_sse && ./bin/build.sh
       stage: build
     - script: cd apps/chat_service && ./bin/build.sh
