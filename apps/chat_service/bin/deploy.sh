@@ -2,5 +2,6 @@
 
 set -ex
 
-# TODO
-exit 0
+source ./bin/_lib.sh
+
+kubectl set image deployment/chat-service chat-service=$APP_NAME:$VERSION --record

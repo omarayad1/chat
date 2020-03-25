@@ -27,7 +27,7 @@ resource "aws_instance" "mqtt" {
   connection {
     private_key = "${file(var.priv_key)}"
     host_key = "${file(var.pub_key)}"
-    user        = "ec2-user"
+    user        = "ubuntu"
     host = self.public_ip
   }
 
@@ -44,9 +44,9 @@ resource "aws_instance" "mqtt" {
       sleep 30;
       >mqtt.ini;
 	echo "[message_queues]" | tee -a mqtt.ini;
-	echo "${aws_instance.mqtt.public_ip} ansible_user=ec2-user ansible_ssh_private_key_file=${var.priv_key}" | tee -a mqtt.ini;
+	echo "${aws_instance.mqtt.public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=${var.priv_key}" | tee -a mqtt.ini;
       	export ANSIBLE_HOST_KEY_CHECKING=False;
-	ansible-playbook -u ec2-user --private-key ${var.priv_key} -i mqtt.ini ${var.ansible_playbook}/install.yml
+	ansible-playbook -u ubuntu --private-key ${var.priv_key} -i mqtt.ini ${var.ansible_playbook}/install.yml
     	EOT
   }
 
