@@ -8,10 +8,10 @@ public class ChatConfig {
     private String mqttPassword;
 
     public ChatConfig() {
-        mqttRootTopic = "affinitas_chat/one_to_one";
-        mqttBrokerUrl = "tcp://localhost:61613";
-        mqttUser = "admin";
-        mqttPassword = "password";
+        mqttRootTopic = System.getenv("MQTT_ROOT_TOPIC") == null ? "affinitas_chat/one_to_one" : System.getenv("MQTT_ROOT_TOPIC");
+        mqttBrokerUrl = System.getenv("MQTT_BROKER_URL") == null ? "tcp://localhost:61613" : System.getenv("MQTT_BROKER_URL");
+        mqttUser = System.getenv("MQTT_USER") == null ? "admin" : System.getenv("MQTT_USER");
+        mqttPassword = System.getenv("MQTT_PASSWORD") == null ? "password" : System.getenv("MQTT_PASSWORD");
     }
 
     public String getMqttRootTopic() {

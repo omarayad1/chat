@@ -1,0 +1,15 @@
+language: python
+
+services:
+  - docker
+
+stages:
+  - build
+
+before_install:
+  - pip install yq ansible
+
+jobs:
+  include:
+    - script: cd apps/chat_broadcast_see && ./bin/build.sh
+      stage: build
