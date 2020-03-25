@@ -26,7 +26,6 @@ resource "aws_instance" "mqtt" {
 
   connection {
     private_key = "${file(var.priv_key)}"
-    host_key = "${file(var.pub_key)}"
     user        = "ubuntu"
     host = self.public_ip
   }
