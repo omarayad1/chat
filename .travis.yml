@@ -17,7 +17,7 @@ jobs:
   include:
     - before_insall:
         - docker pull maven:3.6-jdk-8-slim
-      script: docker run -v ${PWD}:/app maven:3.6-jdk-8-slim /bin/bash -c "cd /app/apps/chat_broadcase_sse; mvn test;"
+      script: docker run -v ${PWD}:/app maven:3.6-jdk-8-slim /bin/bash -c "cd /app/apps/chat_broadcast_sse; mvn test;"
       stage: test
     - before_insall:
         - docker pull maven:3.6-jdk-8-slim
