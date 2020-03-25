@@ -14,3 +14,5 @@ jobs:
   include:
     - script: cd apps/chat_broadcast_sse && ./bin/build.sh
       stage: build
+    - script: cd apps/chat_service && ./bin/build.sh
+      stage: build
