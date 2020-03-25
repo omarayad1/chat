@@ -9,3 +9,6 @@ variable username {}
 variable aws_access_key_id {}
 variable aws_secret_access_key {}
 variable aws_region {}
+
+# used for ec2 instance
+variable priv_key {}

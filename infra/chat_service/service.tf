@@ -1,4 +1,4 @@
-resource "kubernetes_service" "message_api" {
+resource "kubernetes_service" "chat_service" {
   metadata {
     name = "chat-service"
   }

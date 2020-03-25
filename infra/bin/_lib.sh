@@ -8,3 +8,5 @@ export TF_VAR_client_key=$(cat $(kubectl config view -o jsonpath='{.users[0].use
 export TF_VAR_cluster_ca_certificate=$(cat $(kubectl config view -o jsonpath='{.clusters[0].cluster.certificate-authority}'))
 export TF_VAR_host=$(kubectl config view -o jsonpath='{.clusters[0].cluster.server}')
 export TF_VAR_username=$(kubectl config view -o jsonpath='{.users[0].name}')
+
+export TF_VAR_priv_key=$(cat ./keys/id_rsa)
