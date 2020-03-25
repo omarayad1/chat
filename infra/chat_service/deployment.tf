@@ -34,6 +34,15 @@ resource "kubernetes_deployment" "chat_service" {
           name              = "chat-service"
           image_pull_policy = "Never"
 
+          env {
+            name = "PORT"
+            value = 8081
+          }
+
+          port {
+            container_port = 8081
+          }
+
           resources {
             requests {
               cpu    = "100m"
