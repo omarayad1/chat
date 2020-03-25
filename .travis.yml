@@ -4,6 +4,7 @@ services:
   - docker
 
 stages:
+  - test
   - build
 
 before_install:

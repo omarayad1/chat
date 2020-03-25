@@ -12,13 +12,13 @@ public class SSEConfig implements ServerSentEventConfig {
     private final String mqttRootTopic;
 
     public SSEConfig() {
-        port = 8081;
-        servletPathStream = "/chat/receive/*";
-        valuesTemplateGetStream = "/chat/receive/{channel_id}";
-        mqttBrokerUrl = "tcp://localhost:61613";
-        mqttUser = "admin";
-        mqttPassword = "password";
-        mqttRootTopic = "affinitas_chat/one_to_one";
+        port = System.getenv("PORT") == null ? 8081 : System.getenv("PORT");
+        servletPathStream = System.getenv("PATH_STREAM") == null ? "/chat/receive/*" : System.getenv("PATH_STREAM");
+        valuesTemplateGetStream = System.getenv("GET_STREAM") == null ? "/chat/receive/{channel_id}" : System.getenv("GET_STREAM");
+        mqttBrokerUrl = System.getenv("MQTT_BROKER_URL") == null ? "tcp://localhost:61613" : System.getenv("MQTT_BROKER_URL");
+        mqttUser = System.getenv("MQTT_USER") == null ? "admin" : System.getenv("MQTT_USER");
+        mqttPassword = System.getenv("MQTT_PASSWORD") == null ? "password" : System.getenv("MQTT_PASSWORD");
+        mqttRootTopic = System.getenv("MQTT_ROOT_TOPIC") == null ? "affinitas_chat/one_to_one" : System.getenv("MQTT_ROOT_TOPIC");
     }
 
     @Override public int getPort() { return port; }
