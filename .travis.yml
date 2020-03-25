@@ -11,5 +11,5 @@ before_install:
 
 jobs:
   include:
-    - script: cd apps/chat_broadcast_see && ./bin/build.sh
+    - script: cd apps/chat_broadcast_sse && ./bin/build.sh
       stage: build
